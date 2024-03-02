@@ -19,7 +19,11 @@ connectDatabase()
 const server = app.listen(process.env.PORT,()=>{
     console.log(`sesrver is working on http://localhost:${process.env.PORT}`);
 })
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 71d636c5c85ccb323282f8eba8e30437c8349eec
 // unhandled Promise Rejection
 process.on("unhandledRejection",err=>{
     console.log(`Error: ${err.message}`);
