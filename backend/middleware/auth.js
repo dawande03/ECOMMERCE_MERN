@@ -26,10 +26,6 @@ return (req,res,next)=>{
             )
         );  
     }
-<<<<<<< HEAD
     next(); 
-=======
-    next();
->>>>>>> 71d636c5c85ccb323282f8eba8e30437c8349eec
 };
 }
