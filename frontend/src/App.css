@@ -1,13 +1,10 @@
 *{
     margin: 0;
     scroll-behavior: smooth;
-<<<<<<< HEAD
 }
 /* Chrome */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button{
     -webkit-appearance: none;
     margin: 0;
-=======
->>>>>>> 71d636c5c85ccb323282f8eba8e30437c8349eec
 }

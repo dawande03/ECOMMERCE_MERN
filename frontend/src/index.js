@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import {Provider} from "react-redux";
 import store from './store';
-<<<<<<< HEAD
 import {positions,transitions,Provider as AlertProvider} from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
@@ -20,12 +19,4 @@ root.render(
       <App />
       </AlertProvider>
     </Provider>
-=======
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode store={store}>
-    <App />
-  </React.StrictMode>
->>>>>>> 71d636c5c85ccb323282f8eba8e30437c8349eec
 );
