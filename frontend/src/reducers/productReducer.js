@@ -11,7 +11,6 @@ import {
 export const productReducer = (state = { products: [] }, action) => {
     switch (action.type) {
         case ALL_PRODUCT_REQUEST:
-            console.log("Error in ALL_PRODUCT_FAIL: 1", action.payload); // Log the error here
             return {
                 loading: true,
                 product: []
@@ -20,11 +19,11 @@ export const productReducer = (state = { products: [] }, action) => {
             return {
                 loading: false,
                 products: action.payload.products,
-                productsCount: action.payload.productsCount
+                productsCount: action.payload.productsCount,
+                resultPerPage: action.payload.resultPerPage
             }
 
         case ALL_PRODUCT_FAIL: {
-            console.log("Error in ALL_PRODUCT_FAIL:", action.payload); // Log the error here
             return {
                 loading: false,
                 error: action.payload

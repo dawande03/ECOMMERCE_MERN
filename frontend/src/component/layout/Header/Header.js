@@ -13,6 +13,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+import SearchAppBar from './SearchBar';
+import Search from '../../Product/Search';
 
 interface Props {
   /**
@@ -23,7 +26,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact', 'Product',"Search",'Cart','Profile'];
+const navItems = ['Home', 'About', 'Contact', 'Products', 'Cart', 'Profile'];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -43,7 +46,9 @@ export default function DrawerAppBar(props: Props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <Link to={`/${item.toLocaleLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <ListItemText primary={item} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -72,15 +77,22 @@ export default function DrawerAppBar(props: Props) {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Ecommerce
+            <Link to="/home" style={{ textDecoration: 'none', color: 'inherit' }}>
+              Ecommerce
+            </Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
+              <Link key={item} to={`/${item.toLowerCase()}`} style={{ textDecoration: 'none', color: '#fff' }}>
+                <Button sx={{ color: '#fff' }}>
+                  {item}
+                </Button>
+              </Link>
             ))}
+            {/* <input type="text" placeholder="Search" style={{ marginLeft: '10px', padding: '5px' }} /> */}
+            
           </Box>
+            <Search/>
         </Toolbar>
       </AppBar>
       <nav>
@@ -102,7 +114,7 @@ export default function DrawerAppBar(props: Props) {
       </nav>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        
+
       </Box>
     </Box>
   );
