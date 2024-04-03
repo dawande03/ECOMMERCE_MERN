@@ -11,16 +11,16 @@ import {
 import {baseUrl} from "../../src/config"
 
 
-export const getProduct = () => async (dispatch) => {
+export const getProduct = ({keyword="", currentPage =1}) => async (dispatch) => {
+    console.log(keyword);
     try {
         dispatch({type: ALL_PRODUCT_REQUEST});
+        const {data} = await axios.get(baseUrl + `products?keyword=${keyword}&page=${currentPage}`);
         
-        const {data} = await axios.get(baseUrl + "products");
-        console.log("API Data:", data); // Log the data to the console
-        dispatch({  
+        dispatch(   {
             type: ALL_PRODUCT_SUCCESS,
             payload: data   
-        })  
+        })
        
     } catch (error) {
         dispatch({

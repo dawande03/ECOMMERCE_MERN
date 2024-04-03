@@ -3,9 +3,6 @@ import ReactStars from "react-rating-stars-component";
 import profilePng from "../../Images/Profile.png"
 
 const ReviewCard = ({review}) => {
-    useEffect(()=>{
-        console.log("console check===========>");
-    },[])
     const options = {
         edit: false,
         color: "rgba(20,20,20,0.1)",
