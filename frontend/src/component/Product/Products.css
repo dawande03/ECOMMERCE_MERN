@@ -58,3 +58,10 @@
 .pageLinkActive{
     color: white;
 }
+
+.filterBox{
+    width: 10vmax;
+    position: absolute;
+    top:11vmax;
+    left: 4vmax;
+}

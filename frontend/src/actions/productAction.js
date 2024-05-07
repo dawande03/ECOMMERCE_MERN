@@ -11,15 +11,15 @@ import {
 import {baseUrl} from "../../src/config"
 
 
-export const getProduct = ({keyword="", currentPage =1}) => async (dispatch) => {
-    console.log(keyword);
+export const getProduct = ({keyword="", currentPage =1, price=[0,25000]}) => async (dispatch) => {
+  
     try {
         dispatch({type: ALL_PRODUCT_REQUEST});
-        const {data} = await axios.get(baseUrl + `products?keyword=${keyword}&page=${currentPage}`);
+        const {data} = await axios.get(baseUrl + `products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}`);
         
-        dispatch(   {
+        dispatch({
             type: ALL_PRODUCT_SUCCESS,
-            payload: data   
+            payload: data 
         })
        
     } catch (error) {
